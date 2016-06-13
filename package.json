@@ -1,0 +1,33 @@
+{
+  "name": "testformspree",
+  "version": "0.0.1",
+  "description": "SPA that can be used to test formspree.",
+  "main": "buld/index.js",
+  "scripts": {
+    "build:sass": "node-sass styles/main.scss -o build/styles",
+    "build:cmcss": "cp node_modules/codemirror/lib/codemirror.css build/styles",
+    "build": "npm run build:cmcss && npm run build:sass && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/formspree/testformspree"
+  },
+  "author": "Cole Krumbholz",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ace-builds": "^1.2.2",
+    "codemirror": "^5.15.2",
+    "es6-docready": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.7.0",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  }
+}
