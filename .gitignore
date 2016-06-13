@@ -1,10 +1,4 @@
 .DS_Store
 npm-debug.log*
 node_modules
-src
-styles
-.babelrc
-.eslintrc.json
 LICENSE
-package.json
-webpack.config.js
