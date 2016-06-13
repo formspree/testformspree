@@ -5,7 +5,7 @@
   "main": "buld/index.js",
   "scripts": {
     "build:sass": "node-sass styles/main.scss -o build/styles",
-    "build:cmcss": "cp node_modules/codemirror/lib/codemirror.css build/styles",
+    "build:cmcss": "mkdir -p build/styles && cp node_modules/codemirror/lib/codemirror.css build/styles",
     "build": "npm run build:cmcss && npm run build:sass && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
