@@ -17,7 +17,7 @@ $legacy_support_for_ie: false !default; // Used also in Compass
 // Set the default font family here so you don't have to override it later
 $normalized_font_family: sans-serif !default;
 
-$normalize_headings: true !default;
+$normalize_headings: false !default;
 
 $h1_font_size: 2em !default;
 $h2_font_size: 1.5em !default;
@@ -131,7 +131,7 @@ body {
 
 a {
     // 1
-    
+
     background: transparent;
 
     // 2
@@ -275,7 +275,7 @@ q:after {
 // Address inconsistent and variable font size in all browsers.
 
 small {
-    font-size: 80%;
+    // font-size: 80%;
 }
 
 // Prevents sub and sup affecting line-height in all browsers
