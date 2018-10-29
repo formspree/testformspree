@@ -1,3 +1,5 @@
+
+// old colors
 $navy: #4ca1a7;
 $dark-green: #2A735B;
 $light-green: #4CD1A7;
@@ -13,355 +15,371 @@ $warning-orange: #D87431;
 $info-blue: $navy;
 $error-red: #CC3F36;
 
+// new colors
+$snow: #f9f9f8;
+$white-smoke: #f7f7f4;
+$isabelline: #f2f2ee;
+
+$platinum: #e3e3da;
+$pale-silver: #c4beb9;
+$taupe-gray: #918f8d;
+$granite-gray: #666260;
+
+$harvard-crimson: #c4001a;
+$warm-black: #103742;
+$smoky-black: #0f0906;
+
 @import 'normalize.scss';
 @import 'grid.scss';
 @import 'typography.scss';
 @import 'editor.scss';
 
-// @import 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
-
-html {
-    height: 100%;
-}
 body {
-    min-height: 90%;
+  margin: 0;
+  min-height: 100vh;
+  background-color: $snow;
 }
 
 body#card {
-    background: $accent-blue;
-    padding-top: 4em;
-    font-size: 0.9em;
-    text-align: center;
+  background: $accent-blue;
+  padding-top: 4em;
+  font-size: 0.9em;
+  text-align: center;
 
-    &.dashboard {
-        padding-top: 0;
-    }
+  &.dashboard {
+    padding-top: 0;
+  }
 }
 
 .tooltip {
-    font-weight: 600;
-    cursor: help;
+  font-weight: 600;
+  cursor: help;
 }
 
 #title {
-    text-align: center;
-    margin-bottom: 3em;
-    h1 {
-        font-size: 1.2em;
-    }
-    img {
-        max-width: 70px;
-    }
+  text-align: center;
+  margin-bottom: 4vw;
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .1em;
+  }
+  img {
+    max-width: 88px;
+    margin-bottom: .5em;
+  }
 }
 
-
 .row.section {
-    padding-top: 5em;
-    padding-bottom: 5em;
-    border-bottom: 1px solid #ddd;
-    &#header {
-        border-color: $green;
-    }
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+
+  &#header {
+    border-color: $green;
+  }
 }
 
 #header {
+  border-bottom: 1px solid #ddd;
 
+  i {
+    font-size: 4em;
+    color: $dark-blue;
+  }
+  .next {
+    opacity: 0.5;
+  }
+  .success {
     i {
-        font-size: 4em;
-        color: $dark-blue;
+      color: $green;
     }
-
-    .next {
-        opacity: 0.5;
+  }
+  .error {
+    i {
+      color: $red;
     }
+  }
+  .done {
+    opacity: 0.3;
 
-    .success {
-        i {
-            color: $green;
-        }
+    p {
+      text-decoration: line-through;
     }
-
-    .error {
-        i {
-            color: $red;
-        }
+  }
+  .done, .current {
+    i {
+      color: $green;
     }
-
-    .done {
-        opacity: 0.3;
-        p {
-            text-decoration: line-through;
-        }
-    }
-
-    .done, .current {
-        i {
-            color: $green;
-        }
-    }
-
-    border-bottom: 1px solid #ddd;
+  }
 }
 
-
 .container {
-    padding-top: 1em;
-    padding-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  @media (max-width: 760px) {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  &.block {
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
 
     @media (max-width: 760px) {
-        padding-bottom: 0 !important;
-        padding-top: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
     }
 
-    &.block {
-        padding-bottom: 1.5em;
-        padding-top: 1.5em;
-
-        @media (max-width: 760px) {
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
-        }
-
-        &:first-child{
-            padding-top: 0;
-        }
-        &:last-child{
-            padding-bottom: 0;
-        }
+    &:first-child{
+      padding-top: 0;
     }
-
-    &.card {
-        max-width: 500px;
+    &:last-child{
+      padding-bottom: 0;
     }
+  }
 
-    &.index-card {
-        max-width: 950px;
-    }
+  &.card {
+    max-width: 500px;
+  }
+
+  &.index-card {
+    max-width: 950px;
+  }
 }
 
 
 .card,
 .index-card {
-    padding: 0.9em;
-    background: #fff;
-    border: 1px solid $accent;
+  padding: 0.9em;
+  background: #fff;
+  border: 1px solid $accent;
 
-    h1 {
-        font-size: 1.8em;
-    }
-
+  h1 {
+      font-size: 1.8em;
+  }
 }
 
 .row.grey {
-    background: $accent-blue;
-}
-
-
-p {
-    line-height: 1.5em;
+  background: $accent-blue;
 }
 
 p.code {
-    font-size: 0.8em;
-    font-family: "source-code-pro", monospace;
-    border: 1px solid $accent;
-    background: #fff;
-    @media (max-width: 760px) {
-        overflow: auto;
-    }
+  font-size: 0.8em;
+  font-family: "Source Code Pro", monospace;
+  border: 1px solid $pale-silver;
+  background: #fff;
+
+  @media (max-width: 760px) {
+      overflow: auto;
+  }
 }
 
 span.code {
-    font-family: "source-code-pro", monospace;
-    display: inline-block;
-    padding: 0 0.2em;
-    border: 1px solid $accent;
-    background: #fff;
-    font-size: 0.9em;
+  font-family: "Source Code Pro", monospace;
+  display: inline-block;
+  padding: 0 0.2em;
+  border: 1px solid var(--pale-silver);
+  background: #fff;
+  font-size: 0.9em;
 }
 
 input, textarea {
-    font-size: 0.8em;
-    &.code {
-        font-family: "source-code-pro", monospace;
-    }
-    font-family: 'proxima-nova-soft', sans-serif;
-    border: 1px solid $accent;
-    background: #fff;
-    padding: 0.9em;
-    transition: all 0.3s ease-in-out;
-    width: 100%;
-    &:focus{
-        border-color: $dark-green;
-        outline: none;
-        box-shadow: 0 0 5px 1px $green;
-    }
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  color: $granite-gray;
+  border: 1px solid $pale-silver;
+  background: #fff;
+  padding: 1em;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+
+  &.code {
+    font-family: "Source Code Pro", monospace;
+  }
+  &:focus{
+    border-color: $warm-black;
+    outline: none;
+  }
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-    width: auto;
-    margin-right: 6px;
+  width: auto;
+  margin-right: 6px;
 }
 
-form input, form textarea {
-    margin-bottom: 0.5em;
+form input {
+  margin-bottom: 0.5em;
+}
+form textarea {
+  margin-bottom: 1em;
+}
+
+small.code-label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: 0.5em 1em;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.1);
 }
 
 button, a.button {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: 2px solid $green;
-    color: $green;
-    background: transparent;
-    line-height: 1em;
-    padding: 0.6em 0.9em;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-        border-color: $dark-green;
-        color: $dark-green;
+  font-family: "Poppins", sans-serif;
+  font-size: .707em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1em;
+  border: 1px solid $warm-black;
+  background-color: $warm-black;
+  color: $isabelline;
+  padding: 0.832em 1.414em 0.707em;
 
-        &.emphasis {
-            color: white;
-            background-color: $dark-green;
-        }
+  &:hover {
+    border-color: $harvard-crimson;
+    background-color: $harvard-crimson;
+    color: $isabelline;
+
+    &.emphasis {
+      color: white;
+      background-color: $dark-green;
     }
-    &[disabled],
-    &[disabled]:hover {
-      color: lighten($green, 40%);
-      border-color: lighten($green, 40%);
-    }
+  }
+  &[disabled],
+  &[disabled]:hover {
+    color: $isabelline;
+    border-color: $taupe-gray;
+    background-color: $taupe-gray;
+  }
+}
+button[type="reset"] {
+  border: 1px solid $taupe-gray;
+  background-color: $taupe-gray;
 }
 
 
 .animate {
+  -moz-animation-iteration-count: once;
+  -moz-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);;
+  -moz-animation-duration: 0.4s;
 
-    -moz-animation-iteration-count: once;
-    -moz-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);;
-    -moz-animation-duration: 0.4s;
+  -webkit-animation-iteration-count: once;
+  -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);;
+  -webkit-animation-duration: 0.4s;
 
-    -webkit-animation-iteration-count: once;
-    -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);;
-    -webkit-animation-duration: 0.4s;
-
-    &.dropIn {
-        -moz-animation-name: dropIn;
-        -webkit-animation-name: dropIn;
-    }
-    
+  &.dropIn {
+    -moz-animation-name: dropIn;
+    -webkit-animation-name: dropIn;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        opacity: 1;
-    }
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes dropIn {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -150px, 0);
-        -moz-transform: translate3d(0, -150px, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-    }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -150px, 0);
+    -moz-transform: translate3d(0, -150px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
 }
 
 @-webkit-keyframes dropInLong {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -450px, 0);
-        -moz-transform: translate3d(0, -450px, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-    }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -450px, 0);
+    -moz-transform: translate3d(0, -450px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
 }
 
 @-webkit-keyframes rotate {
-    100% {
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-    }
+  100% {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+  }
 }
 
 @-webkit-keyframes rotateBack {
-    100% {
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-    }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
 }
 
 .overlay {
-    position: fixed;
-    width: 100%; 
-    height: 100%;
-
-    top: -10000px;
-    left: -10000px;
-    opacity: 0;
-
-    transition: opacity 0.4s linear;
-
-    background: rgba(255,255,255,0.96);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -10000px;
+  left: -10000px;
+  opacity: 0;
+  transition: opacity 0.4s linear;
+  background: rgba(255,255,255,0.96);
 }
 
 body.showOverlay {
-    overflow: hidden;
+  overflow: hidden;
 
-    .overlay {
-        top: 0;
-        left: 0;
-        opacity: 1;
+  .overlay {
+    top: 0;
+    left: 0;
+    opacity: 1;
 
-        iframe {
-            -webkit-animation-iteration-count: once;
-            -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);;
-            -webkit-animation-duration: 0.4s;
+    iframe {
+      -webkit-animation-iteration-count: once;
+      -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);;
+      -webkit-animation-duration: 0.4s;
 
-            -moz-animation-name: dropInLong;
-            -webkit-animation-name: dropInLong;
-        }
-
+      -moz-animation-name: dropInLong;
+      -webkit-animation-name: dropInLong;
     }
+  }
 }
 
 .toggleOverlay {
-    cursor: pointer;
-    position: fixed; top: 20px; left: 20px; 
-    font-size: 2.2em;
-    font-weight: 600;
+  cursor: pointer;
+  position: fixed; top: 20px; left: 20px;
+  font-size: 2.2em;
+  font-weight: 600;
 
-    -moz-animation-iteration-count: once;
-    -moz-animation-fill-mode: forwards;
-    -moz-animation-timing-function: linear;
-    -moz-animation-duration: 0.2s;
+  -moz-animation-iteration-count: once;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-timing-function: linear;
+  -moz-animation-duration: 0.2s;
 
-    -webkit-animation-iteration-count: once;
-    -webkit-animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-duration: 0.2s;
-
+  -webkit-animation-iteration-count: once;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 0.2s;
 }
 
 body.showOverlay .toggleOverlay {
-    -moz-animation-name: rotate;
-    -webkit-animation-name: rotate;
+  -moz-animation-name: rotate;
+  -webkit-animation-name: rotate;
 }
-
 
 #toast-container {
   right: 30%;
