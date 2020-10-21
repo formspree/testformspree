@@ -7,16 +7,6 @@
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <title>Test Formspree</title>
 
-  <script>
-    (function(){
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect != location.href) {
-        history.replaceState(null, null, redirect);
-      }
-    })();
-  </script>
-
   <script src="https://use.typekit.net/qix7act.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
